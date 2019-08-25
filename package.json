@@ -1,0 +1,88 @@
+{
+  "name": "react-building-blocks",
+  "version": "1.0.0",
+  "description": "Components made with React",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
+    "storybook": "start-storybook -p 6006",
+    "lint": "eslint src",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "preset": "amex-jest-preset-react"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesSingleton/react-building-blocks.git"
+  },
+  "keywords": [
+    "react components",
+    "building blocks",
+    "component",
+    "components",
+    "react",
+    "react building blocks"
+  ],
+  "author": "James Singleton (https://twitter.com/Design__Pattern)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesSingleton/react-building-blocks/issues"
+  },
+  "homepage": "https://github.com/JamesSingleton/react-building-blocks#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.1.1",
+    "snyk": "^1.217.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@commitlint/cli": "8.1.0",
+    "@commitlint/config-conventional": "8.1.0",
+    "@storybook/addon-actions": "5.1.11",
+    "@storybook/addon-links": "5.1.11",
+    "@storybook/addons": "5.1.11",
+    "@storybook/react": "5.1.11",
+    "@storybook/theming": "5.1.11",
+    "amex-jest-preset-react": "5.0.2",
+    "babel-loader": "8.0.6",
+    "babel-preset-amex": "2.1.0",
+    "enzyme": "3.10.0",
+    "enzyme-to-json": "3.4.0",
+    "eslint": "5.16.0",
+    "eslint-config-amex": "10.1.0",
+    "husky": "3.0.4",
+    "jest": "24.9.0",
+    "lint-staged": "9.2.3",
+    "rimraf": "3.0.0",
+    "rollup": "1.20.1",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-commonjs": "10.0.2",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "yargs": "14.0.0"
+  },
+  "snyk": true
+}
